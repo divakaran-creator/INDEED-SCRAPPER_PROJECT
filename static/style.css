@@ -1,0 +1,61 @@
+/* Container for job cards */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Individual job card */
+.job-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Job info text */
+.job-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #0073b1;
+    margin-bottom: 5px;
+}
+
+.company {
+    font-size: 1em;
+    color: #555;
+}
+
+.location {
+    font-size: 0.9em;
+    color: #888;
+}
+
+header {
+    background-color: #0073b1; /* LinkedIn-style blue */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header img.header-logo {
+    width: 120px;      /* larger width */
+    height: 120px;     /* larger height */
+    margin-right: 20px; /* spacing between logo and text */
+    border-radius: 8px; /* optional rounded corners */
+    object-fit: contain;
+}
+form {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;  /* top & bottom spacing increased */
+}

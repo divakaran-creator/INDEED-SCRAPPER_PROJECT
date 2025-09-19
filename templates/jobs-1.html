@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+    <img class="header-logo" src="{{ url_for('static', filename='logo.png') }}" alt="Site Logo">
+    <span>Job Portal</span>
+    </header>
+
+
+    <div class="container">
+        <!-- Search Form -->
+        <form method="get" action="/">
+            <input type="text" name="q" placeholder="Search jobs..." value="{{ query }}">
+            <button type="submit">Search</button>
+        </form>
+
+        {% if jobs %}
+            <div class="cards-container">
+                {% for job in jobs %}
+                    <div class="job-card">
+                        <div class="job-info">
+                            <div class="job-title">{{ job.title }}</div>
+                            <div class="company">{{ job.company }}</div>
+                            <div class="location">{{ job.location }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No jobs found for "{{ query }}"</p>
+        {% endif %}
+    </div>
+</body>
+</html>
